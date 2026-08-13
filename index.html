@@ -155,10 +155,10 @@
     <p class="lead">Antecipe suas vendas a prazo e ponha o caixa pra trabalhar agora — sem dívida, sem banco, sem burocracia. Enquanto você espera o boleto cair, seu concorrente já cresce com o dinheiro que <strong>você tem parado</strong>.</p>
 
     <form class="lead-form bar">
-      <input type="hidden" name="access_key" value="__WEB3FORMS_KEY__">
-      <input type="hidden" name="subject" value="🔥 Novo lead — LP Antecipação OP Capital">
-      <input type="hidden" name="from_name" value="Landing OP Capital">
-      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_subject" value="🔥 Novo lead — LP Antecipação OP Capital">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
       <div class="form-bar">
         <input type="text" name="nome" placeholder="Seu nome" required>
         <input type="tel" name="whatsapp" placeholder="Seu WhatsApp (com DDD)" required>
@@ -229,10 +229,10 @@
       <h3>Antecipe agora e receba hoje</h3>
       <p class="fc-sub">Deixe seus dados. A gente te chama com a simulação na hora.</p>
       <form class="lead-form">
-        <input type="hidden" name="access_key" value="__WEB3FORMS_KEY__">
-        <input type="hidden" name="subject" value="🔥 Novo lead — LP Antecipação OP Capital (fechamento)">
-        <input type="hidden" name="from_name" value="Landing OP Capital">
-        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+        <input type="hidden" name="_subject" value="🔥 Novo lead — LP Antecipação OP Capital (fechamento)">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
         <div class="field"><input type="text" name="nome" placeholder="Seu nome" required></div>
         <div class="field"><input type="tel" name="whatsapp" placeholder="Seu WhatsApp (com DDD)" required></div>
         <div class="field"><input type="text" name="empresa" placeholder="Nome da sua empresa" required></div>
@@ -269,20 +269,14 @@
       ev.preventDefault();
       const btn=form.querySelector('.btn-submit');
       const msg=form.querySelector('.form-msg');
-      const key=form.querySelector('[name=access_key]').value;
       msg.className='form-msg';
-      if(!key || key.indexOf('__')===0){
-        msg.className='form-msg err';
-        msg.textContent='Formulário ainda não configurado (falta a chave do Web3Forms).';
-        return;
-      }
       const btnTxt=btn.textContent;
       btn.disabled=true; btn.textContent='Enviando...';
       try{
         const data=Object.fromEntries(new FormData(form).entries());
-        const res=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});
+        const res=await fetch('https://formsubmit.co/ajax/comercial@opcapital.digital',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});
         const out=await res.json();
-        if(out.success){
+        if(out.success===true||out.success==='true'){
           form.querySelectorAll('.form-bar, .field, .btn-submit, .fc-micro').forEach(n=>n.style.display='none');
           msg.className='form-msg ok';
           msg.innerHTML='✅ <strong>Recebemos seus dados!</strong> Em instantes um especialista da OP Capital vai te chamar com a simulação.';
