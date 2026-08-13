@@ -141,6 +141,29 @@
     .b-statement .bignum{font-size:8rem;bottom:-18px}
     .close-grid{grid-template-columns:1fr;gap:34px}
   }
+
+  /* --- WhatsApp: botao flutuante + alternativa ao formulario --- */
+  .wa-float{
+    position:fixed;bottom:26px;right:26px;z-index:200;
+    display:inline-flex;align-items:center;gap:10px;
+    background:#25D366;color:#fff;font-weight:700;font-size:15px;
+    padding:14px 22px 14px 18px;border-radius:999px;text-decoration:none;
+    box-shadow:0 14px 34px -8px rgba(37,211,102,.6);transition:.25s;
+  }
+  .wa-float:hover{transform:translateY(-3px) scale(1.03)}
+  .wa-float svg{width:26px;height:26px}
+  .wa-alt{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin-top:20px}
+  .wa-alt span{color:#8fa0bd;font-size:13.5px}
+  .wa-btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;white-space:nowrap;
+    border:1.5px solid rgba(37,211,102,.55);color:#25D366;background:rgba(37,211,102,.08);
+    font-weight:700;font-size:14.5px;padding:11px 20px;border-radius:999px;transition:.22s}
+  .wa-btn:hover{background:#25D366;color:#fff;border-color:#25D366;transform:translateY(-2px)}
+  .wa-btn svg{width:19px;height:19px}
+  @media(max-width:620px){
+    .wa-float{bottom:16px;right:16px;padding:13px 18px 13px 15px;font-size:14px}
+    .wa-float svg{width:23px;height:23px}
+    .wa-alt{flex-direction:column;gap:9px}
+  }
 </style>
 </head>
 <body>
@@ -168,6 +191,12 @@
       <p class="fc-micro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Análise gratuita, sem compromisso e sem burocracia. Resposta em minutos.</p>
       <div class="form-msg"></div>
     </form>
+    <div class="wa-alt">
+      <span>Prefere falar agora com um especialista?</span>
+      <a class="wa-btn" href="https://wa.me/5544991496854?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20e%20quero%20antecipar%20minhas%20vendas.%20Pode%20me%20ajudar?" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23a8.2 8.2 0 0 1 8.23 8.24c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43-.14-.01-.31-.01-.48-.01a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> Chamar no WhatsApp
+      </a>
+    </div>
 
     <div class="hero-trust">
       <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M20 6 9 17l-5-5"/></svg> Sem criar dívida</span>
@@ -240,6 +269,12 @@
         <p class="fc-micro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Seus dados estão seguros. Sem spam.</p>
         <div class="form-msg"></div>
       </form>
+    <div class="wa-alt">
+      <span>Ou fale direto, sem preencher nada:</span>
+      <a class="wa-btn" href="https://wa.me/5544991496854?text=Ol%C3%A1!%20Quero%20saber%20quanto%20consigo%20antecipar%20hoje." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23a8.2 8.2 0 0 1 8.23 8.24c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43-.14-.01-.31-.01-.48-.01a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg> Chamar no WhatsApp
+      </a>
+    </div>
     </div>
   </div>
 </section>
@@ -259,6 +294,13 @@
     </div>
   </div>
 </footer>
+
+<!-- FLOATING WHATSAPP -->
+<a class="wa-float" href="https://wa.me/5544991496854?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20OP%20Capital%20e%20quero%20antecipar%20meus%20receb%C3%ADveis." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.16 8.16 0 0 1-1.26-4.35c0-4.54 3.7-8.23 8.24-8.23a8.2 8.2 0 0 1 8.23 8.24c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43-.14-.01-.31-.01-.48-.01a.92.92 0 0 0-.67.31c-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+  <span class="lbl">Fale com a gente</span>
+</a>
+
 
 <script>
   const io=new IntersectionObserver((e)=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
